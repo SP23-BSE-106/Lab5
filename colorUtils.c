@@ -30,8 +30,8 @@ int toGrayScaleLuminosity(int r, int g, int b){
 
 // three functions to compute the three sepia-tone RGB values
 int toSepiaRed(int r, int g, int b){
-  // for red 0.393r + 0.769g + 189b;
-  return round(0.393*r + 0.769*g + 189*b);
+  // for red 0.393r + 0.769g + 0.189b;
+  return round(0.393*r + 0.769*g + 0.189*b);
 }
 
 int toSepiaGreen(int r, int g, int b){

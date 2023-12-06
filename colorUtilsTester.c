@@ -192,6 +192,18 @@ int main(int argc, char **argv) {
   //        min(), toGrayScaleLightness(), toGrayScaleLuminosity(),
   //        toSepiaRed(), toSepiaGreen(), toSepiaBlue()
   //       for at least 6 and a total of at least 20
+   r = 100, g = 39, b = 40;
+  expectedResult = 60;
+  printf("TESTING: toGrayScaleLightness(%d,%d,%d): ", r, g, b);
+  result = toGrayScaleLightness(r, g, b);
+  //TODO: this test case will fail, why?
+  if(result != expectedResult) {
+    printf("FAILED: toGrayScaleLightness returned %d, expected %d\n", result, expectedResult);
+    numFailed++;
+  } else {
+    printf("PASSED\n");
+    numPassed++;
+  }
 
   printf("Number Test Cases Passed: %6d\n", numPassed);
   printf("Number Test Cases Failed: %6d\n", numFailed);
