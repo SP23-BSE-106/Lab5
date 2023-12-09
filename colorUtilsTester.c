@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
-
 #include "colorUtils.h"
 
 #define DELTA 0.0001
@@ -192,13 +191,79 @@ int main(int argc, char **argv) {
   //        min(), toGrayScaleLightness(), toGrayScaleLuminosity(),
   //        toSepiaRed(), toSepiaGreen(), toSepiaBlue()
   //       for at least 6 and a total of at least 20
-   r = 100, g = 39, b = 40;
-  expectedResult = 60;
+
+
+// minumum function
+ printf("TESTING: min(%d,%d,%d): ", x, y, z);
+  result = min(x, y, z);
+  if(result != 10) {
+    printf("FAILED: max returned %d, expected 10\n", result);
+    numFailed++;
+  } else {
+    printf("PASSED\n");
+    numPassed++;
+  }
+
+// lightness function
+r = 12, g = 15, b = 20;
+  expectedResult = 16;
   printf("TESTING: toGrayScaleLightness(%d,%d,%d): ", r, g, b);
   result = toGrayScaleLightness(r, g, b);
-  //TODO: this test case will fail, why?
   if(result != expectedResult) {
     printf("FAILED: toGrayScaleLightness returned %d, expected %d\n", result, expectedResult);
+    numFailed++;
+  } else {
+    printf("PASSED\n");
+    numPassed++;
+  }
+
+// luminosity function
+r = 15, g = 7, b = 30;
+  expectedResult = 10;
+  printf("TESTING: toGrayScaleLuminosity(%d,%d,%d): ", r, g, b);
+  result = toGrayScaleLuminosity(r, g, b);
+  if(result != expectedResult) {
+    printf("FAILED: toGrayScaleLuminosity returned %d, expected %d\n", result, expectedResult);
+    numFailed++;
+  } else {
+    printf("PASSED\n");
+    numPassed++;
+  }
+
+
+  //toSepiaRed function
+r = 10, g = 20, b = 40;
+  expectedResult = 27;
+  printf("TESTING: toSepiaRed(%d,%d,%d): ", r, g, b);
+  result = toSepiaRed(r, g, b);
+  if(result != expectedResult) {
+    printf("FAILED: toSepiaRed returned %d, expected %d\n", result, expectedResult);
+    numFailed++;
+  } else {
+    printf("PASSED\n");
+    numPassed++;
+  }
+
+  //toSepiaGreen
+  r = 12, g = 16, b = 22;
+  expectedResult = 18;
+  printf("TESTING: toSepiaGreen(%d,%d,%d): ", r, g, b);
+  result = toSepiaGreen(r, g, b);
+  if(result != expectedResult) {
+    printf("FAILED: toSepiaGreen returned %d, expected %d\n", result, expectedResult);
+    numFailed++;
+  } else {
+    printf("PASSED\n");
+    numPassed++;
+  }
+
+  //toSepiaBlue
+  r = 11, g = 13, b = 17;
+  expectedResult = 12;
+  printf("TESTING: toSepiaBlue(%d,%d,%d): ", r, g, b);
+  result = toSepiaBlue(r, g, b);
+  if(result != expectedResult) {
+    printf("FAILED: toSepiaBlue returned %d, expected %d\n", result, expectedResult);
     numFailed++;
   } else {
     printf("PASSED\n");
