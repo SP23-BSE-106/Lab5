@@ -197,7 +197,7 @@ int main(int argc, char **argv) {
  printf("TESTING: min(%d,%d,%d): ", x, y, z);
   result = min(x, y, z);
   if(result != 10) {
-    printf("FAILED: max returned %d, expected 10\n", result);
+    printf("FAILED: min returned %d, expected 10\n", result);
     numFailed++;
   } else {
     printf("PASSED\n");
